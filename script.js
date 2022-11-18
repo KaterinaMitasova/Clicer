@@ -6,6 +6,9 @@ let gridBoard = 3;
 let countHole = gridBoard * gridBoard;
 let sizeHole = board.offsetHeight / gridBoard * 0.85;
 
+// переменная для жизней (количество жизней)
+countLifes = 5;
+
 //---------------- Выполнение программы
 
 
@@ -69,6 +72,31 @@ function startTimer (n) {
         }
     }, 1000);
  }
+// жизни
+function createLifes() {
+    let lifesBlock = document.querySelector(".game_block lifes");
+// очищать блок
+    lifesBlock.innerHTML = "";
+// создаем счетчик
+    let count = 0;
+// создаем цикл
+    while(count < countLifes) {
+        let span = document.createElement("span");
+        lifesBlock.appendChild(span);
+        //увеличиваем счетчик
+        count = count + 1;
+    }
+}
+// создаем функцию уменьшения жизней, кликнули на собаку
+function lifesDown() {
+    countLifes = countLifes - 1;
+    if (countLifes <= 0) {
+        endGame();
+    }
+    createLifes();
+}
+
+
 
 //-- Курсор
 window.addEventListener('mousemove', e => {
