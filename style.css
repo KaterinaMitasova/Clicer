@@ -97,6 +97,23 @@ background-size: cover; */
     height: 80%;
     width: auto;
 }
+.lifes {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 10px;
+    left: 20px;
+}
+
+.lifes span {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background: url(img/stakan.png);
+    background-size: cover;
+}
+
 .cursor{
     height: 150px;
     width: 150px;
